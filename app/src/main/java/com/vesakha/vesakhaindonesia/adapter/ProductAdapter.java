@@ -20,8 +20,8 @@ import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder>{
 
-    private List<Product> productList = new ArrayList<>();
-    private ProductCallback productCallback = null;
+    List<Product> productList = new ArrayList<>();
+    ProductCallback productCallback = null;
 
     public void setProductList(List<Product> productList) {
         this.productList = productList;
@@ -41,16 +41,19 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
-        Product currentProduct = productList.get(position);
-        holder.setProduct(currentProduct);
-        holder.getParent().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (productCallback != null){
-                    productCallback.productPressed(currentProduct);
+        if (productList != null){
+            Product currentProduct = productList.get(position);
+            holder.setProduct(currentProduct);
+            holder.getParent().setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (productCallback != null){
+                        productCallback.productPressed(currentProduct);
+                    }
                 }
-            }
-        });
+            });
+        }
+
     }
 
     @Override
@@ -78,8 +81,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         }
 
         public void setProduct(Product product){
-            Picasso.get().load(product.getUrlImage()).into(productImageView);
-            Log.d("JEJE", "setProduct: " + product.getUrlImage());
+
+            String url = "https://vesakha.id/img/product/" + product.getUrlImage().substring(0, product.getUrlImage().indexOf("|"));
+            Log.d("JEJE", "setProduct: "+url);
+            Picasso.get().load(url).into(productImageView);
             priceProdTextView.setText(product.getPriceProduct());
             nameProdTextView.setText(product.getNameProduct());
         }

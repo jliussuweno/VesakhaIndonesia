@@ -5,6 +5,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements ProductCallback, 
     private ProductAdapter productAdapter;
     private RecyclerView productRecyclerView;
     private MainViewModel mainViewModel;
+    private final GridLayoutManager gridLayoutManager = new GridLayoutManager(MainActivity.this, 2);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,6 @@ public class MainActivity extends AppCompatActivity implements ProductCallback, 
         productAdapter = new ProductAdapter();
         productAdapter.setProductCallback(this);
         productRecyclerView = findViewById(R.id.productRecyclerView);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
         productRecyclerView.setHasFixedSize(true);
         productRecyclerView.setLayoutManager(gridLayoutManager);
         productRecyclerView.setAdapter(productAdapter);
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements ProductCallback, 
             @Override
             public void onChanged(List<Product> products) {
                 productAdapter.setProductList(products);
+                productAdapter.notifyDataSetChanged();
             }
         });
 
