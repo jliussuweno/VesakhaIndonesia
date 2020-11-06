@@ -39,7 +39,6 @@ public class MainViewModel extends AndroidViewModel {
 
     public void initProductData(){
 
-
         RequestQueue queue = Volley.newRequestQueue(context);
         String url ="https://vesakha.id/api/indexPro";
 
@@ -93,28 +92,5 @@ public class MainViewModel extends AndroidViewModel {
                 }, error -> Log.d(TAG, "That didn't work! "));
 
         queue.add(stringRequest);
-
-//        tempProduct.add(new Product("1",
-//                "Printer 3D",
-//                "https://i.picsum.photos/id/369/200/300.jpg?hmac=ZM5SPtUsEjxc4HjsZXj3DAHeKWSaZV6r8sJMGiLYIJ8",
-//                "Rp. 25.000.000,00",
-//                "10",
-//                "13",
-//                "15000"));
-//        tempProduct.add(new Product("2",
-//                "Printer 3D",
-//                "https://i.picsum.photos/id/369/200/300.jpg?hmac=ZM5SPtUsEjxc4HjsZXj3DAHeKWSaZV6r8sJMGiLYIJ8",
-//                "Rp. 25.000.000,00",
-//                "10",
-//                "13",
-//                "15000"));
-//        tempProduct.add(new Product("2",
-//                "Printer 4D",
-//                "https://i.picsum.photos/id/369/200/300.jpg?hmac=ZM5SPtUsEjxc4HjsZXj3DAHeKWSaZV6r8sJMGiLYIJ8",
-//                "Rp. 125.000.000,00",
-//                "10",
-//                "13",
-//                "15000"));
-
     }
 }

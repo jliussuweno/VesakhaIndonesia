@@ -83,7 +83,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         public void setProduct(Product product){
 
             String url = "https://vesakha.id/img/product/" + product.getUrlImage().substring(0, product.getUrlImage().indexOf("|"));
-            Log.d("JEJE", "setProduct: "+url);
             Picasso.get().load(url).into(productImageView);
             priceProdTextView.setText(product.getPriceProduct());
             nameProdTextView.setText(product.getNameProduct());

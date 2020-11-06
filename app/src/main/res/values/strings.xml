@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Vesakha Indonesia</string>
+    <string name="harga">Harga</string>
+    <string name="nama_product">Nama Product</string>
 </resources>
