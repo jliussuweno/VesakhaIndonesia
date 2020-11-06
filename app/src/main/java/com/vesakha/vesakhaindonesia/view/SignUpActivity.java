@@ -25,8 +25,6 @@ import com.vesakha.vesakhaindonesia.viewmodel.SignUpViewModel;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static android.widget.Toast.LENGTH_SHORT;
-
 public class SignUpActivity extends AppCompatActivity {
 
     EditText fullNameEditText;
