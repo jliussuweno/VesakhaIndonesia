@@ -2,4 +2,17 @@
     <string name="app_name">Vesakha Indonesia</string>
     <string name="harga">Harga</string>
     <string name="nama_product">Nama Product</string>
+    <string name="alphabet">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="have_an_account_log_in_here">Have an Account? Log In Here.</string>
+    <string name="weak">Weak</string>
+    <string name="medium">Medium</string>
+    <string name="strong">Strong</string>
+    <string name="very_strong">Very Strong</string>
+    <string name="sign_up_label">Don\'t have Account? Sign Up Here</string>
+    <string name="log_in">Log In</string>
 </resources>

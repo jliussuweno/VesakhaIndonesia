@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.SignUpActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <EditText
+        android:id="@+id/editTextTextFullName"
+        android:digits="@string/alphabet"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:hint="@string/full_name"
+        android:inputType="textPersonName"
+        android:maxLength="20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddressSignUp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextFullName"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextFullName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextFullName" />
+
+    <RelativeLayout
+        android:id="@+id/passwordRelative"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextEmailAddressSignUp"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddressSignUp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddressSignUp">
+
+        <EditText
+            android:id="@+id/editTextTextPasswordSignUp"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:paddingTop="10dp"
+            android:paddingEnd="40dp"
+            android:paddingBottom="10dp" />
+
+        <ImageView
+            android:id="@+id/show_pass_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:alpha=".5"
+            android:onClick="ShowHidePass"
+            android:padding="5dp"
+            android:src="@drawable/ic_outline_visibility_off_24" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/password_strength"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/passwordRelative"
+        app:layout_constraintStart_toStartOf="@+id/passwordRelative"
+        app:layout_constraintTop_toBottomOf="@+id/passwordRelative" />
+
+    <RelativeLayout
+        android:id="@+id/confirmPasswordRelative"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="@+id/passwordRelative"
+        app:layout_constraintStart_toStartOf="@+id/passwordRelative"
+        app:layout_constraintTop_toBottomOf="@+id/passwordRelative">
+
+        <EditText
+            android:id="@+id/editTextTextConfirmPassword"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:ems="10"
+            android:hint="@string/confirm_password"
+            android:inputType="textPassword"
+            android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="10dp" />
+
+        <ImageView
+            android:id="@+id/show_confirmpass_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:alpha=".5"
+            android:onClick="ShowHidePass"
+            android:padding="5dp"
+            android:src="@drawable/ic_outline_visibility_off_24" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/buttonSignUp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/sign_up"
+        app:layout_constraintEnd_toEndOf="@+id/confirmPasswordRelative"
+        app:layout_constraintStart_toStartOf="@+id/confirmPasswordRelative"
+        app:layout_constraintTop_toBottomOf="@+id/confirmPasswordRelative" />
+
+    <TextView
+        android:id="@+id/textViewLogIn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/have_an_account_log_in_here"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/buttonSignUp"
+        app:layout_constraintStart_toStartOf="@+id/buttonSignUp"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSignUp"
+        app:layout_constraintVertical_bias="0.85" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
