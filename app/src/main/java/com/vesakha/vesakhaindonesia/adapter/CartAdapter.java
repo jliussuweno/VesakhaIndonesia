@@ -17,58 +17,55 @@ import com.vesakha.vesakhaindonesia.model.Cart;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
+public class CartAdapter extends RecyclerView.Adapter {
 
     List<Cart> cartList = new ArrayList<>();
+    private int ITEM_HEADER = 0;
+    private int ITEM_MENU = 1;
 
-    @NonNull
-    @Override
-    public CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View tempView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cart, parent, false);
-        return new CartViewHolder(tempView);
+    public void setCartList(List<Cart> cartList) {
+        this.cartList = cartList;
+        notifyDataSetChanged();
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
-        if (cartList != null){
-            Cart currentCart = cartList.get(position);
-            holder.setData(currentCart);
-        }
+    public int getItemViewType(int position) {
+        return super.getItemViewType(position);
+    }
+
+    @NonNull
+    @Override
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return null;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+
     }
 
     @Override
     public int getItemCount() {
-        return cartList.size();
+        return 0;
     }
 
-    class CartViewHolder extends RecyclerView.ViewHolder {
-
-        TextView nameDivision;
-        TextView nameProduct;
-        TextView stockProduct;
-        TextView priceProduct;
-        EditText quantityProduct;
-        ImageView imageProduct;
-
-        public CartViewHolder(@NonNull View itemView) {
-            super(itemView);
-
-            nameDivision = itemView.findViewById(R.id.textViewNamaDivisi);
-            nameProduct = itemView.findViewById(R.id.textViewNamaProductCart);
-            stockProduct = itemView.findViewById(R.id.textViewStockCart);
-            priceProduct = itemView.findViewById(R.id.textViewPriceCart);
-            quantityProduct = itemView.findViewById(R.id.editTextQuantity);
-            imageProduct = itemView.findViewById(R.id.imageViewProductCart);
-        }
-
-        public void setData(Cart cart){
-            String url = "https://vesakha.id/img/product/" + cart.getImg().substring(0, cart.getImg().indexOf("|"));
-            Picasso.get().load(url).into(imageProduct);
-            nameDivision.setText(cart.getNameProduct());
-            nameProduct.setText(cart.getNameProduct());
-            stockProduct.setText(cart.getStock());
-            priceProduct.setText(cart.getPrice());
-            quantityProduct.setText(cart.getQty());
-        }
-    }
+//    @NonNull
+//    @Override
+//    public CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+//        View tempView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cart, parent, false);
+//        return new CartViewHolder(tempView);
+//    }
+//
+//    @Override
+//    public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
+//        if (cartList != null){
+//            Cart currentCart = cartList.get(position);
+//            holder.setData(currentCart);
+//        }
+//    }
+//
+//    @Override
+//    public int getItemCount() {
+//        return cartList.size();
+//    }
 }

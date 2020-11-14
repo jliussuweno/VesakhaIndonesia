@@ -60,8 +60,11 @@ public class DescriptionActivity extends AppCompatActivity implements Serializab
         cartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                descriptionViewModel.insertCart(currentProduct);
+//                descriptionViewModel.insertCart(currentProduct);
+                Intent intent1 = new Intent(DescriptionActivity.this, CartActivity.class);
+                startActivity(intent1);
             }
+
         });
 
     }
